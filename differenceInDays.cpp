@@ -25,6 +25,53 @@ int main()
     int remainingDay = 0;
     int calculatingDays = 0;
 
+        //days are the same, but the month and year are different
+    if(m1 == 2)
+    {
+        remainingDay = ( (d1) + (31-d1) );
+    }
+    if (m1 == 3)
+    {
+        remainingDay = ( (d1) + 29 + (31-d1) );
+    }
+    if (m1 == 4)
+    {
+        remainingDay = ( (d1) + 31 + 29 + (31-d1) );
+    }
+    if (m1 == 5)
+    {
+        remainingDay = ( (d1) + 30 + 31 + 29 + (31-d1) );
+    }
+    if (m1 == 6)
+    {
+        remainingDay = ( (d1) + 31 + 30 + 31 + 29 + (31-d1) );
+    }
+    if (m1 == 7)
+    {
+        remainingDay = ( (d1) + 30 + 31 + 30 + 31 + 29 + (31-d1) );
+    }
+    if (m1 == 8)
+    {
+        remainingDay = ( (d1) + 31 + 30 + 31 + 30 + 31 + 29 + (31-d1) );
+    }
+    if (m1 == 9)
+    {
+        remainingDay = ( (d1) + 31 + 31 + 30 + 31 + 30 + 31 + 29 + (31-d1) );
+    }
+    if (m1 == 10)
+    {
+        remainingDay = ( (d1) + 30 + 31 + 31 + 30 + 31 + 30 + 31 + 29 + (31-d1) );
+    }
+    if (m1 == 11)
+    {
+        remainingDay = ( (d1) + 31 + 30 + 31 + 31 + 30 + 31 + 30 + 31 + 29 + (31-d1) );
+    }
+    if (m1 == 12)
+    {
+        remainingDay = ( (d1) + 30 + 31 + 30 + 31 + 31 + 30 + 31 + 30 + 31 + 29 + (31-d1) );
+    }
+    
+    
     while(y1 != y2)
     {
         --y1;
