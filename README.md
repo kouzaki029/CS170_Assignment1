@@ -1,1 +1,3 @@
 # CS170_Assignment1_Problem1
+
+Write a program to calculate the number of days between two dates. Each date is represented by three integers: day, month, and year. Validate the user input and if it is invalid, ask the user to enter again. If user enters three times an invalid day or month, announce that the program will exit and exit the program. Use the following rules for determining leap years: A leap year is one whose number is exactly divisible by four.  Century years, however, are only leap years if they are exactly divisible by 400. Hence 1900 was not a leap year but 2000 was. Your program should not use arrays or vectors. 
