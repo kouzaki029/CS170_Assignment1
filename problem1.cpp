@@ -145,7 +145,18 @@ int main()
         //calculate the difference in days
         else if(firstDAY > 0 && firstMONTH > 0 && firstYEAR > 0 && secondDAY > 0 && secondMONTH > 0 && secondYEAR > 0)
         {
-
+            if(firstYEAR % 4 == 0 && firstYEAR % 100 == 0 && firstYEAR % 400 == 0)
+            {
+                //std::cout << "firstYEAR (i.e., " << firstYEAR << ") is a leap century.\n";
+            }
+            else if(firstYEAR % 4 == 0 && firstYEAR % 100 != 0 && firstYEAR % 400 != 0)
+            {
+                //std::cout << "firstYEAR (i.e., " << firstYEAR << ") is a leap year.\n";
+            }
+            else
+            {
+                //std::cout << "firstYEAR (i.e., " << firstYEAR << ") is a not leap year.\n";
+            }
         }
 
     }
