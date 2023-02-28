@@ -55,6 +55,33 @@ int main()
                 cin.ignore(numeric_limits<streamsize>::max(), '\n');
                 cout << "Invalid entry.\n";
             }
+
+            //validating the correct number of days per month
+            if(firstDAY == 31 && (userEntry == 2 || userEntry == 4 || userEntry == 6 || userEntry == 9 || userEntry == 11))
+            {
+                ++errorCount;
+                cin.clear();
+                cin.ignore(numeric_limits<streamsize>::max(), '\n');
+                cout << "Invalid entry. There are not 31 days in ";
+                if (userEntry == 2)
+                    cout << "Feb.\n";
+                else if (userEntry == 4)
+                    cout << "Apr.\n";
+                else if (userEntry == 6)
+                    cout << "Jun.\n";
+                else if (userEntry == 9)
+                    cout << "Aug.\n";
+                else if (userEntry == 11)
+                    cout << "Nov.\n";
+            }
+            else if(firstDAY == 30 && userEntry == 2)
+            {
+                ++errorCount;
+                cin.clear();
+                cin.ignore(numeric_limits<streamsize>::max(), '\n');
+                cout << "Invalid entry. There are not 30 days in Feb.\n";
+            }
+
             else
             {
                 firstMONTH = userEntry;
