@@ -26,7 +26,7 @@ int main()
             }
             cout << "Please enter a number for firstDAY (e.g., 02): ";
             cin >> userEntry;
-            if (cin.fail() || userEntry == 0)
+            if (cin.fail() || userEntry == 0 || userEntry > 31)
             {
                 ++errorCount;
                 cin.clear();
@@ -48,7 +48,7 @@ int main()
             }
             cout << "Please enter a number for firstMONTH (e.g., 03): ";
             cin >> userEntry;
-            if (cin.fail() || userEntry == 0)
+            if (cin.fail() || userEntry == 0 || userEntry > 12)
             {
                 ++errorCount;
                 cin.clear();
@@ -89,7 +89,7 @@ int main()
             }
             cout << "Please enter a number for secondDAY (e.g., 02): ";
             cin >> userEntry;
-            if (cin.fail() || userEntry == 0)
+            if (cin.fail() || userEntry == 0 || userEntry > 31)
             {
                 ++errorCount;
                 cin.clear();
@@ -111,7 +111,7 @@ int main()
             }
             cout << "Please enter a number for secondMONTH (e.g., 03): ";
             cin >> userEntry;
-            if (cin.fail() || userEntry == 0)
+            if (cin.fail() || userEntry == 0 || userEntry > 12)
             {
                 ++errorCount;
                 cin.clear();
