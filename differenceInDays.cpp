@@ -2,9 +2,9 @@
 
 int main()
 {
-    int d1 = 23;
-    int m1 = 10;
-    int y1 = 2020;
+    int d1 = 22;
+    int m1 = 11;
+    int y1 = 2021;
     int d2 = 23;
     int m2 = 01;
     int y2 = 1899;
@@ -15,10 +15,14 @@ int main()
     // 03/23/2020 - 01/23/1899 =           23 + 29 + 8 + 44194
     // 04/23/2020 - 01/23/1899 =      23 + 31 + 29 + 8 + 44194
     // 05/23/2020 - 01/23/1899 = 23 + 30 + 31 + 29 + 8 + 44194
+    // 01/24/2020 - 01/23/1899 =
     //step 1: subtract the difference between days (e.g., 1/23 - 1/23 = 0)
     //step 2: determine if (YEAR - 1) is a leap year, add 366 to 0.
     //                  if (YEAR - 1) is NOT a leap year, add 365 to 0.
     //step 3: keep repeating step 2 until YEAR = secondYear
+
+    //the day, month and year are different
+    int dayDifference = d1-d2;
 
     int remainingDay = 0;
     int leapDays = 0;
@@ -31,43 +35,153 @@ int main()
     }
     if (m1 == 3)
     {
-        remainingDay = ( (d1) + 29 + (31-d1) );
+        if(y1 % 4 == 0 && y1 % 100 == 0 && y1 % 400 == 0)
+        {
+            remainingDay = ( (d1) + 29 + (31-d1) );
+        }
+        else if(y1 % 4 == 0 && y1 % 100 != 0 && y1 % 400 != 0)
+        {
+            remainingDay = ( (d1) + 29 + (31-d1) );
+        }
+        else
+        {
+            remainingDay = ( (d1) + 28 + (31-d1) );
+        }
     }
     if (m1 == 4)
     {
-        remainingDay = ( (d1) + 31 + 29 + (31-d1) );
+        if(y1 % 4 == 0 && y1 % 100 == 0 && y1 % 400 == 0)
+        {
+            remainingDay = ( (d1) + 31 + 29 + (31-d1) );
+        }
+        else if(y1 % 4 == 0 && y1 % 100 != 0 && y1 % 400 != 0)
+        {
+            remainingDay = ( (d1) + 31 + 29 + (31-d1) );
+        }
+        else
+        {
+            remainingDay = ( (d1) + 31 + 28 + (31-d1) );
+        }
     }
     if (m1 == 5)
     {
-        remainingDay = ( (d1) + 30 + 31 + 29 + (31-d1) );
+        if(y1 % 4 == 0 && y1 % 100 == 0 && y1 % 400 == 0)
+        {
+            remainingDay = ( (d1) + 30 + 31 + 29 + (31-d1) );
+        }
+        else if(y1 % 4 == 0 && y1 % 100 != 0 && y1 % 400 != 0)
+        {
+            remainingDay = ( (d1) + 30 + 31 + 29 + (31-d1) );
+        }
+        else
+        {
+            remainingDay = ( (d1) + 30 + 31 + 28 + (31-d1) );
+        }
     }
     if (m1 == 6)
     {
-        remainingDay = ( (d1) + 31 + 30 + 31 + 29 + (31-d1) );
+        if(y1 % 4 == 0 && y1 % 100 == 0 && y1 % 400 == 0)
+        {
+            remainingDay = ( (d1) + 31 + 30 + 31 + 29 + (31-d1) );
+        }
+        else if(y1 % 4 == 0 && y1 % 100 != 0 && y1 % 400 != 0)
+        {
+            remainingDay = ( (d1) + 31 + 30 + 31 + 29 + (31-d1) );
+        }
+        else
+        {
+            remainingDay = ( (d1) + 31 + 30 + 31 + 28 + (31-d1) );
+        }
     }
     if (m1 == 7)
     {
-        remainingDay = ( (d1) + 30 + 31 + 30 + 31 + 29 + (31-d1) );
+        if(y1 % 4 == 0 && y1 % 100 == 0 && y1 % 400 == 0)
+        {
+            remainingDay = ( (d1) + 30 + 31 + 30 + 31 + 29 + (31-d1) );
+        }
+        else if(y1 % 4 == 0 && y1 % 100 != 0 && y1 % 400 != 0)
+        {
+            remainingDay = ( (d1) + 30 + 31 + 30 + 31 + 29 + (31-d1) );
+        }
+        else
+        {
+            remainingDay = ( (d1) + 30 + 31 + 30 + 31 + 28 + (31-d1) );
+        }
     }
     if (m1 == 8)
     {
-        remainingDay = ( (d1) + 31 + 30 + 31 + 30 + 31 + 29 + (31-d1) );
+        if(y1 % 4 == 0 && y1 % 100 == 0 && y1 % 400 == 0)
+        {
+            remainingDay = ( (d1) + 31 + 30 + 31 + 30 + 31 + 29 + (31-d1) );
+        }
+        else if(y1 % 4 == 0 && y1 % 100 != 0 && y1 % 400 != 0)
+        {
+            remainingDay = ( (d1) + 31 + 30 + 31 + 30 + 31 + 29 + (31-d1) );
+        }
+        else
+        {
+            remainingDay = ( (d1) + 31 + 30 + 31 + 30 + 31 + 28 + (31-d1) );
+        }
     }
     if (m1 == 9)
     {
-        remainingDay = ( (d1) + 31 + 31 + 30 + 31 + 30 + 31 + 29 + (31-d1) );
+        if(y1 % 4 == 0 && y1 % 100 == 0 && y1 % 400 == 0)
+        {
+            remainingDay = ( (d1) + 31 + 31 + 30 + 31 + 30 + 31 + 29 + (31-d1) );
+        }
+        else if(y1 % 4 == 0 && y1 % 100 != 0 && y1 % 400 != 0)
+        {
+            remainingDay = ( (d1) + 31 + 31 + 30 + 31 + 30 + 31 + 29 + (31-d1) );
+        }
+        else
+        {
+            remainingDay = ( (d1) + 31 + 31 + 30 + 31 + 30 + 31 + 28 + (31-d1) );
+        }
     }
     if (m1 == 10)
     {
-        remainingDay = ( (d1) + 30 + 31 + 31 + 30 + 31 + 30 + 31 + 29 + (31-d1) );
+        if(y1 % 4 == 0 && y1 % 100 == 0 && y1 % 400 == 0)
+        {
+            remainingDay = ( (d1) + 30 + 31 + 31 + 30 + 31 + 30 + 31 + 29 + (31-d1) );
+        }
+        else if(y1 % 4 == 0 && y1 % 100 != 0 && y1 % 400 != 0)
+        {
+            remainingDay = ( (d1) + 30 + 31 + 31 + 30 + 31 + 30 + 31 + 29 + (31-d1) );
+        }
+        else
+        {
+            remainingDay = ( (d1) + 30 + 31 + 31 + 30 + 31 + 30 + 31 + 28 + (31-d1) );
+        }
     }
     if (m1 == 11)
     {
-        remainingDay = ( (d1) + 31 + 30 + 31 + 31 + 30 + 31 + 30 + 31 + 29 + (31-d1) );
+        if(y1 % 4 == 0 && y1 % 100 == 0 && y1 % 400 == 0)
+        {
+            remainingDay = ( (d1) + 31 + 30 + 31 + 31 + 30 + 31 + 30 + 31 + 29 + (31-d1) );
+        }
+        else if(y1 % 4 == 0 && y1 % 100 != 0 && y1 % 400 != 0)
+        {
+            remainingDay = ( (d1) + 31 + 30 + 31 + 31 + 30 + 31 + 30 + 31 + 29 + (31-d1) );
+        }
+        else
+        {
+            remainingDay = ( (d1) + 31 + 30 + 31 + 31 + 30 + 31 + 30 + 31 + 28 + (31-d1) );
+        }
     }
     if (m1 == 12)
     {
-        remainingDay = ( (d1) + 30 + 31 + 30 + 31 + 31 + 30 + 31 + 30 + 31 + 29 + (31-d1) );
+        if(y1 % 4 == 0 && y1 % 100 == 0 && y1 % 400 == 0)
+        {
+            remainingDay = ( (d1) + 30 + 31 + 30 + 31 + 31 + 30 + 31 + 30 + 31 + 29 + (31-d1) );
+        }
+        else if(y1 % 4 == 0 && y1 % 100 != 0 && y1 % 400 != 0)
+        {
+            remainingDay = ( (d1) + 30 + 31 + 30 + 31 + 31 + 30 + 31 + 30 + 31 + 29 + (31-d1) );
+        }
+        else
+        {
+            remainingDay = ( (d1) + 30 + 31 + 30 + 31 + 31 + 30 + 31 + 30 + 31 + 28 + (31-d1) );
+        }
     }
 
     //days and months are the same, but the year is different
@@ -82,8 +196,9 @@ int main()
         else
             leapDays += 365;
     }
-    calculatingDays = remainingDay + leapDays;
+    calculatingDays = dayDifference + remainingDay + leapDays;
 
+    std::cout << "\tdayDifference = " << dayDifference << "\n";
     std::cout << "\tremainingDay = " << remainingDay << "\n";
     std::cout << "\tleapDays = " << leapDays << "\n";
     std::cout << "\tcalculatingDays = " << calculatingDays << "\n";
