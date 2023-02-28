@@ -85,6 +85,7 @@ int main()
             else
             {
                 firstMONTH = userEntry;
+                //cout << "firstDAY = " << firstDAY << "\tfirstMONTH = " << firstMONTH << "\n";
                 //cout << "firstMONTH = " << firstMONTH << "\n";
             }
         }
@@ -102,6 +103,7 @@ int main()
             else
             {
                 firstYEAR = userEntry;
+                //cout << "firstDAY = " << firstDAY << "\tfirstMONTH = " << firstMONTH << "\tfirstYEAR = " << firstYEAR << "\n";
                 //cout << "firstYEAR = " << firstYEAR << "\n";
             }
         }
