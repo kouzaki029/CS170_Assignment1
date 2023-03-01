@@ -1,6 +1,5 @@
 #include <cmath>
 #include <iostream>
-#include <random>
 using std::cin, std::cout, std::numeric_limits, std::streamsize, std::string;
 
 int main()
@@ -20,15 +19,15 @@ int main()
         {
             if (marble == -1)
             {
-                cout << "Enter marble quantity: ";
+                cout << "Enter marble quantity (i.e., 10 to 100): ";
                 cin >> marble;
             }
-            else if(cin.fail() || marble == 0)
+            else if(cin.fail() || marble == 0 || marble > 100 || marble < 10)
             {
                 cin.clear();
                 cin.ignore(numeric_limits<streamsize>::max(), '\n');
                 cout << "Invalid Entry.\n";
-                cout << "Enter marble quantity: ";
+                cout << "Enter marble quantity (i.e., 10 to 100): ";
                 cin >> marble;
             }
         }while(cin.fail() || marble == -1);
