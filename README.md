@@ -10,8 +10,7 @@ Minimum requirements: ask the user to enter the initial size of the pile between
 
 
 
-3) 
-Credit card number check.  The last digit of a credit card number is the check digit, which protects again transcription errors such as an error in a single digit or switching two digits. The following method is used to verify actual credit card numbers, but for simplicity we will describe it for 8 digits instead of 16:
+3) Credit card number check.  The last digit of a credit card number is the check digit, which protects again transcription errors such as an error in a single digit or switching two digits. The following method is used to verify actual credit card numbers, but for simplicity we will describe it for 8 digits instead of 16:
 •	Starting from the rightmost digit, calculate the sum of every other digit. For example, if the credit card number is 43589795, then you form the sum 5 + 7 + 8 + 3 = 23.
 •	Double all the digits that were not included in the preceding step. For example, with the number give above you double the digits 9, 9, 5, and 4, which yield 18, 18, 10, and 8. Adding all the digits in these numbers gives 1+8+1+8+1+0+8 = 27.
 •	Add the sums of the two preceding steps. If the last digit of the result is 0, the number is valid. In our example, 23 + 27 = 50, so the number is valid.
