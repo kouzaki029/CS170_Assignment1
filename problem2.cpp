@@ -1,5 +1,6 @@
 #include <cmath>
 #include <iostream>
+#include <random>
 using std::cin, std::cout, std::numeric_limits, std::streamsize, std::string;
 
 int main()
@@ -30,7 +31,7 @@ int main()
                 cout << "Enter marble quantity (i.e., 10 to 100): ";
                 cin >> marble;
             }
-        }while(cin.fail() || marble == -1);
+        }while(cin.fail() || marble == -1 || marble > 100 || marble < 10);
 
         string gameMode = "";
         cout << "Please select playing mode (i.e., simple or smart): ";
