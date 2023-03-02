@@ -67,7 +67,6 @@ int main()
         int userNumber = userEntry;
         int base = 10;
         int exponent = digitCount;
-        int result = 1;
         int doubleMe = 0; //call me doubleMe
         int extractDigit = 0;
         int verifyOdd = 0;
@@ -82,7 +81,6 @@ int main()
             //even-exponent
             if(i % 2 == 0)
             {
-                result *= base;
                 userNumber /= base;
                 /*DEBUG PURPOSES: std::cout << userEntry << " / " << base << "^" << i << " = " << userNumber << "\n";*/
                 evenPlace += (userNumber % base);
@@ -91,7 +89,6 @@ int main()
             //odd-exponent
             else
             {
-                result *= base;
                 userNumber /= base;
                 /*DEBUG PURPOSES: std::cout << userEntry << " / " << base << "^" << i << " = " << userNumber << "\n";*/
                 oddPlace += (userNumber % base);
