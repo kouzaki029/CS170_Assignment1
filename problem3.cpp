@@ -8,8 +8,8 @@ int main()
     int sum = 0;
     int digitCount = 0;
     bool calculating = true;
-    int rememberMe = 0;
-    int doubleMe = 0;
+    int evenPlace = 0;
+    int oddPlace = 0;
 
     cout << "Please enter an 8-digit number (e.g., 12345678): ";
     cin >> userEntry;
@@ -59,43 +59,68 @@ int main()
         }
         //EXTRA CREDIT: print out where the number is invalid
     }
+    calculating = true;
 
     //verifying the 8-digit number the user entered is a valid credit-card number
-    while(copyEntry != 0)
+    while(calculating)
     {
-        userEntry = 43589795;
-        int myNumber = 43589795;
+        int userNumber = userEntry;
         int base = 10;
         int exponent = digitCount;
         int result = 1;
+        int doubleMe = 0; //call me doubleMe
+        int extractDigit = 0;
+        int verifyOdd = 0;
         for(int i = 1; i < exponent; ++i)
         {
+            //base-case
             if(i == 1)
             {
-                rememberMe += (myNumber % base);
-                /*DEBUG PURPOSES: cout << "rememberMe += (" << myNumber << " % " << base << ") or "<< (myNumber % base) << "\n";*/
+                evenPlace += (userNumber % base);
+                /*DEBUG PURPOSES: cout << "evenPlace += (" << userNumber << " % " << base << ") or "<< (userNumber % base) << "\n";*/
             }
+            //even-exponent
             if(i % 2 == 0)
             {
                 result *= base;
-                myNumber /= base;
-                std::cout << userEntry << " / " << base << "^" << i << " = "<< myNumber << " :)\n";
-                rememberMe += (myNumber % base);
-                /*DEBUG PURPOSES: cout << "rememberMe += (" << myNumber << " % " << base << ") or "<< (myNumber % base) << "\n";*/
+                userNumber /= base;
+                /*DEBUG PURPOSES: std::cout << userEntry << " / " << base << "^" << i << " = " << userNumber << "\n";*/
+                evenPlace += (userNumber % base);
+                /*DEBUG PURPOSES: cout << "evenPlace += (" << userNumber << " % " << base << ") or "<< (userNumber % base) << "\n";*/
             }
+            //odd-exponent
             else
             {
                 result *= base;
-                myNumber /= base;
-                std::cout << userEntry << " / " << base << "^" << i << " = " << myNumber << "\n";
-                doubleMe += (myNumber % base);
-                /*DEBUG PURPOSES:*/ cout << "doubleMe += (" << myNumber << " % " << base << ") or "<< (myNumber % base) << "\n";
-                //
+                userNumber /= base;
+                /*DEBUG PURPOSES: std::cout << userEntry << " / " << base << "^" << i << " = " << userNumber << "\n";*/
+                oddPlace += (userNumber % base);
+                /*DEBUG PURPOSES: cout << "oddPlace += (" << userNumber << " % " << base << ") or "<< (userNumber % base) << "\n";*/
+                doubleMe = (userNumber % base) * 2;
+                /*DEBUG PURPOSES:cout << "idk1 = " << idk1 << "\n";*/
+                while(doubleMe != 0)
+                {
+                    extractDigit = (doubleMe % base);
+                    /*DEBUG PURPOSES: cout << "extractDigit = (" << idk1 << " % " << base << ") or " << extractDigit << "\n";*/
+                    doubleMe /= base;
+                    /*DEBUG PURPOSES: cout << "idk1 /= " << base << ") or " << idk1 << "\n";*/
+                    verifyOdd += extractDigit;
+                }
             }
         }
-        sum = rememberMe + doubleMe;
-        cout << "sum = (" << rememberMe << " + " << doubleMe << ") or " << sum << "\n";
-        copyEntry = 0;
+        /*DEBUG PURPOSES: cout << "verifyOdd = " << verifyOdd << "\n";*/
+        sum = evenPlace + oddPlace;
+        /*DEBUG PURPOSES: cout << "sum = (" << evenPlace << " + " << oddPlace << ") or " << sum << "\n";*/
+
+        if(sum % base == 0)
+        {
+            cout << userEntry << " is a valid credit-card number.\n";
+        }
+        else
+        {
+            cout << userEntry << " is NOT a valid credit-card number.\n";
+        }
+        calculating = false;
     }
 
     return 0;
