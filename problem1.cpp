@@ -1,194 +1,228 @@
 #include <iostream>
-#include<limits>
-using std::cout, std::cin, std::numeric_limits, std::streamsize;
 
 int main()
 {
-    int firstDAY = 0;
-    int firstMONTH = 0;
-    int firstYEAR = 0;
-    int secondDAY = 0;
-    int secondMONTH = 0;
-    int secondYEAR = 0;
-    int errorCount = 0;
-    int userEntry = 0;
-    bool done = false;
+    /*int dayRange = 28 - 1 + 1;
+    int monthRange = 12 - 1 + 1;
+    int yearRange = 900 - 3000 + 1;*/
 
-    while(!done)
+    /*int d1 = rand() % dayRange + 1;
+    int m1 = rand() % monthRange + 1;
+    int y1 = rand() % yearRange + 1;
+    int d2 = rand() % dayRange + 1;
+    int m2 = rand() % monthRange + 1;
+    int y2 = rand() % yearRange + 1;
+
+
+    while (y2 > y1)
     {
-        //retrieving first Date
-        if(firstDAY == 0)
-        {
-            if(errorCount == 3)
-            {
-                cout << "\nYou entered the day and/or month incorrectly three times.\nProgram closing...\n";
-                break;
-            }
-            cout << "Please enter a number for firstDAY (e.g., 02): ";
-            cin >> userEntry;
-            if (cin.fail() || userEntry == 0 || userEntry > 31)
-            {
-                ++errorCount;
-                cin.clear();
-                cin.ignore(numeric_limits<streamsize>::max(), '\n');
-                cout << "Invalid entry.\n";
-            }
-            else
-            {
-                firstDAY = userEntry;
-                //cout << "firstDAY = " << firstDAY << "\n";
-            }
-        }
-        else if(firstMONTH == 0)
-        {
-            if(errorCount == 3)
-            {
-                cout << "\nYou entered the day and/or month incorrectly three times.\nProgram closing...\n";
-                break;
-            }
-            cout << "Please enter a number for firstMONTH (e.g., 03): ";
-            cin >> userEntry;
-            if (cin.fail() || userEntry == 0 || userEntry > 12)
-            {
-                ++errorCount;
-                cin.clear();
-                cin.ignore(numeric_limits<streamsize>::max(), '\n');
-                cout << "Invalid entry.\n";
-            }
+        y2 = rand() % yearRange + 1;
+    }*/
 
-            //validating the correct number of days per month
-            if(firstDAY == 31 && (userEntry == 2 || userEntry == 4 || userEntry == 6 || userEntry == 9 || userEntry == 11))
-            {
-                ++errorCount;
-                cin.clear();
-                cin.ignore(numeric_limits<streamsize>::max(), '\n');
-                cout << "Invalid entry. There are not 31 days in ";
-                if (userEntry == 2)
-                    cout << "Feb.\n";
-                else if (userEntry == 4)
-                    cout << "Apr.\n";
-                else if (userEntry == 6)
-                    cout << "Jun.\n";
-                else if (userEntry == 9)
-                    cout << "Aug.\n";
-                else if (userEntry == 11)
-                    cout << "Nov.\n";
-            }
-            else if(firstDAY == 30 && userEntry == 2)
-            {
-                ++errorCount;
-                cin.clear();
-                cin.ignore(numeric_limits<streamsize>::max(), '\n');
-                cout << "Invalid entry. There are not 30 days in Feb.\n";
-            }
 
-            else
-            {
-                firstMONTH = userEntry;
-                //cout << "firstDAY = " << firstDAY << "\tfirstMONTH = " << firstMONTH << "\n";
-                //cout << "firstMONTH = " << firstMONTH << "\n";
-            }
-        }
-        else if(firstYEAR == 0)
-        {
-            cout << "Please enter a number for firstYEAR (e.g., 03): ";
-            cin >> userEntry;
-            if (cin.fail() || userEntry == 0)
-            {
-                ++errorCount;
-                cin.clear();
-                cin.ignore(numeric_limits<streamsize>::max(), '\n');
-                cout << "Invalid entry.\n";
-            }
-            else
-            {
-                firstYEAR = userEntry;
-                //cout << "firstDAY = " << firstDAY << "\tfirstMONTH = " << firstMONTH << "\tfirstYEAR = " << firstYEAR << "\n";
-                //cout << "firstYEAR = " << firstYEAR << "\n";
-            }
-        }
+    int m1 = 11;
+    int d1 = 23;
+    int y1 = 2009;
+    int m2 = 2;
+    int d2 = 8;
+    int y2 = 2006;
 
-        //retrieving second Date
-        else if(secondDAY == 0)
-        {
-            if(errorCount == 3)
-            {
-                cout << "\nYou entered the day and/or month incorrectly three times.\nProgram closing...\n";
-                break;
-            }
-            cout << "Please enter a number for secondDAY (e.g., 02): ";
-            cin >> userEntry;
-            if (cin.fail() || userEntry == 0 || userEntry > 31)
-            {
-                ++errorCount;
-                cin.clear();
-                cin.ignore(numeric_limits<streamsize>::max(), '\n');
-                cout << "Invalid entry.\n";
-            }
-            else
-            {
-                secondDAY = userEntry;
-                //cout << "secondDAY = " << secondDAY << "\n";
-            }
-        }
-        else if(secondMONTH == 0)
-        {
-            if(errorCount == 3)
-            {
-                cout << "\nYou entered the day and/or month incorrectly three times.\nProgram closing...\n";
-                break;
-            }
-            cout << "Please enter a number for secondMONTH (e.g., 03): ";
-            cin >> userEntry;
-            if (cin.fail() || userEntry == 0 || userEntry > 12)
-            {
-                ++errorCount;
-                cin.clear();
-                cin.ignore(numeric_limits<streamsize>::max(), '\n');
-                cout << "Invalid entry.\n";
-            }
-            else
-            {
-                secondMONTH = userEntry;
-                //cout << "secondMONTH = " << secondMONTH << "\n";
-            }
-        }
-        else if(secondYEAR == 0)
-        {
-            cout << "Please enter a number for secondYEAR (e.g., 03): ";
-            cin >> userEntry;
-            if (cin.fail() || userEntry == 0)
-            {
-                ++errorCount;
-                cin.clear();
-                cin.ignore(numeric_limits<streamsize>::max(), '\n');
-                cout << "Invalid entry.\n";
-            }
-            else
-            {
-                secondYEAR = userEntry;
-                //cout << "secondYEAR = " << secondYEAR << "\n";
-            }
-        }
+    std::cout << "newerDate:\t" << d1 << "-" << m1 << "-" << y1 << "\n";
+    std::cout << "olderDate:\t" << d2 << "-" << m2 << "-" << y2 << "\n";
 
-        //calculate the difference in days
-        else if(firstDAY > 0 && firstMONTH > 0 && firstYEAR > 0 && secondDAY > 0 && secondMONTH > 0 && secondYEAR > 0)
-        {
-            if(firstYEAR % 4 == 0 && firstYEAR % 100 == 0 && firstYEAR % 400 == 0)
-            {
-                //std::cout << "firstYEAR (i.e., " << firstYEAR << ") is a leap century.\n";
-            }
-            else if(firstYEAR % 4 == 0 && firstYEAR % 100 != 0 && firstYEAR % 400 != 0)
-            {
-                //std::cout << "firstYEAR (i.e., " << firstYEAR << ") is a leap year.\n";
-            }
-            else
-            {
-                //std::cout << "firstYEAR (i.e., " << firstYEAR << ") is a not leap year.\n";
-            }
-        }
+    /* 01/23/2020 - 01/23/1899 = 44194 days
+     01/23/2021 - 01/23/1899 = 44560 days
+     02/23/2020 - 01/23/1899 =                23 + 8 + 44194
+     03/23/2020 - 01/23/1899 =           23 + 29 + 8 + 44194
+     04/23/2020 - 01/23/1899 =      23 + 31 + 29 + 8 + 44194
+     05/23/2020 - 01/23/1899 = 23 + 30 + 31 + 29 + 8 + 44194
+     01/24/2020 - 01/23/1899 =
+    step 1: subtract the difference between days (e.g., 1/23 - 1/23 = 0)
+    step 2: determine if (YEAR - 1) is a leap year, add 366 to 0.
+                      if (YEAR - 1) is NOT a leap year, add 365 to 0.
+    step 3: keep repeating step 2 until YEAR = secondYear*/
 
+    //the day, month and year are different
+    int dayDifference = d1 - d2;
+
+    int remainingDay = 0;
+    int leapDays = 0;
+    int calculatingDays = 0;
+
+    //days are the same, but the month and year are different
+    if (m1 == 2)
+    {
+        remainingDay = (d1 - d2);
     }
+    if (m1 == 3)
+    {
+        if (y1 % 4 == 0 && y1 % 100 == 0 && y1 % 400 == 0)
+        {
+            remainingDay = (29 + (d1 - d2));
+        }
+        else if (y1 % 4 == 0 && y1 % 100 != 0 && y1 % 400 != 0)
+        {
+            remainingDay = (29 + (d1 - d2));
+        }
+        else
+        {
+            remainingDay = (28 + (d1 - d2));
+        }
+    }
+    if (m1 == 4)
+    {
+        if (y1 % 4 == 0 && y1 % 100 == 0 && y1 % 400 == 0)
+        {
+            remainingDay = (31 + 29 + (d1 - d2));
+        }
+        else if (y1 % 4 == 0 && y1 % 100 != 0 && y1 % 400 != 0)
+        {
+            remainingDay = (31 + 29 + (d1 - d2));
+        }
+        else
+        {
+            remainingDay = (31 + 28 + (d1 - d2));
+        }
+    }
+    if (m1 == 5)
+    {
+        if (y1 % 4 == 0 && y1 % 100 == 0 && y1 % 400 == 0)
+        {
+            remainingDay = (30 + 31 + 29 + (d1 - d2));
+        }
+        else if (y1 % 4 == 0 && y1 % 100 != 0 && y1 % 400 != 0)
+        {
+            remainingDay = (30 + 31 + 29 + (d1 - d2));
+        }
+        else
+        {
+            remainingDay = (30 + 31 + 28 + (d1 - d2));
+        }
+    }
+    if (m1 == 6)
+    {
+        if (y1 % 4 == 0 && y1 % 100 == 0 && y1 % 400 == 0)
+        {
+            remainingDay = (31 + 30 + 31 + 29 + (d1 - d2));
+        }
+        else if (y1 % 4 == 0 && y1 % 100 != 0 && y1 % 400 != 0)
+        {
+            remainingDay = (31 + 30 + 31 + 29 + (d1 - d2));
+        }
+        else
+        {
+            remainingDay = (31 + 30 + 31 + 28 + (d1 - d2));
+        }
+    }
+    if (m1 == 7)
+    {
+        if (y1 % 4 == 0 && y1 % 100 == 0 && y1 % 400 == 0)
+        {
+            remainingDay = (30 + 31 + 30 + 31 + 29 + (d1 - d2));
+        }
+        else if (y1 % 4 == 0 && y1 % 100 != 0 && y1 % 400 != 0)
+        {
+            remainingDay = (30 + 31 + 30 + 31 + 29 + (d1 - d2));
+        }
+        else
+        {
+            remainingDay = (30 + 31 + 30 + 31 + 28 + (d1 - d2));
+        }
+    }
+    if (m1 == 8)
+    {
+        if (y1 % 4 == 0 && y1 % 100 == 0 && y1 % 400 == 0)
+        {
+            remainingDay = (31 + 30 + 31 + 30 + 31 + 29 + (d1 - d2));
+        }
+        else if (y1 % 4 == 0 && y1 % 100 != 0 && y1 % 400 != 0)
+        {
+            remainingDay = (31 + 30 + 31 + 30 + 31 + 29 + (d1 - d2));
+        }
+        else
+        {
+            remainingDay = (31 + 30 + 31 + 30 + 31 + 28 + (d1 - d2));
+        }
+    }
+    if (m1 == 9)
+    {
+        if (y1 % 4 == 0 && y1 % 100 == 0 && y1 % 400 == 0)
+        {
+            remainingDay = (31 + 31 + 30 + 31 + 30 + 31 + 29 + (d1 - d2));
+        }
+        else if (y1 % 4 == 0 && y1 % 100 != 0 && y1 % 400 != 0)
+        {
+            remainingDay = (31 + 31 + 30 + 31 + 30 + 31 + 29 + (d1 - d2));
+        }
+        else
+        {
+            remainingDay = (31 + 31 + 30 + 31 + 30 + 31 + 28 + (d1 - d2));
+        }
+    }
+    if (m1 == 10)
+    {
+        if (y1 % 4 == 0 && y1 % 100 == 0 && y1 % 400 == 0)
+        {
+            remainingDay = (30 + 31 + 31 + 30 + 31 + 30 + 31 + 29 + (d1 - d2));
+        }
+        else if (y1 % 4 == 0 && y1 % 100 != 0 && y1 % 400 != 0)
+        {
+            remainingDay = (30 + 31 + 31 + 30 + 31 + 30 + 31 + 29 + (d1 - d2));
+        }
+        else
+        {
+            remainingDay = (30 + 31 + 31 + 30 + 31 + 30 + 31 + 28 + (d1 - d2));
+        }
+    }
+    if (m1 == 11)
+    {
+        if (y1 % 4 == 0 && y1 % 100 == 0 && y1 % 400 == 0)
+        {
+            remainingDay = (31 + 30 + 31 + 31 + 30 + 31 + 30 + 31 + 29 + (d1-d2));
+        }
+        else if (y1 % 4 == 0 && y1 % 100 != 0 && y1 % 400 != 0)
+        {
+            remainingDay = (31 + 30 + 31 + 31 + 30 + 31 + 30 + 31 + 29 + (d1-d2));
+        }
+        else
+        {
+            remainingDay = (31 + 30 + 31 + 31 + 30 + 31 + 30 + 31 + 28 + (d1-d2));
+        }
+    }
+    if (m1 == 12)
+    {
+        if (y1 % 4 == 0 && y1 % 100 == 0 && y1 % 400 == 0)
+        {
+            remainingDay = ((d1)+30 + 31 + 30 + 31 + 31 + 30 + 31 + 30 + 31 + 29 + (31 - d1));
+        }
+        else if (y1 % 4 == 0 && y1 % 100 != 0 && y1 % 400 != 0)
+        {
+            remainingDay = ((d1)+30 + 31 + 30 + 31 + 31 + 30 + 31 + 30 + 31 + 29 + (31 - d1));
+        }
+        else
+        {
+            remainingDay = ((d1)+30 + 31 + 30 + 31 + 31 + 30 + 31 + 30 + 31 + 28 + (31 - d1));
+        }
+    }
+
+    //days and months are the same, but the year is different
+    while (y1 != y2)
+    {
+        --y1;
+        /*DEBUG PURPOSES: std::cout << "leapDays = " << leapDays << " leapDays\ty1 = " << y1 << "\n";*/
+        if (y1 % 4 == 0 && y1 % 100 == 0 && y1 % 400 == 0)
+            leapDays += 366;
+        else if (y1 % 4 == 0 && y1 % 100 != 0 && y1 % 400 != 0)
+            leapDays += 366;
+        else
+            leapDays += 365;
+    }
+    calculatingDays = dayDifference + remainingDay + leapDays;
+
+    std::cout << "\tdayDifference = " << dayDifference << "\n";
+    std::cout << "\tremainingDay = " << remainingDay << "\n";
+    std::cout << "\tleapDays = " << leapDays << "\n";
+    std::cout << "\tcalculatingDays = " << calculatingDays << "\n";
 
     return 0;
 }
