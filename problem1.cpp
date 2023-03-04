@@ -45,163 +45,163 @@ int main()
     //the day, month and year are different
     int dayDifference = d1 - d2;
 
-    int remainingDay = 0;
-    int leapDays = 0;
+    int monthDifference = 0;
+    int yearDifference = 0;
     int calculatingDays = 0;
 
     //days are the same, but the month and year are different
     if (m1 == 2)
     {
-        remainingDay = 0;
+        monthDifference = 0;
     }
     if (m1 == 3)
     {
         if (y1 % 4 == 0 && y1 % 100 == 0 && y1 % 400 == 0)
         {
-            remainingDay = (29);
+            monthDifference = (29);
         }
         else if (y1 % 4 == 0 && y1 % 100 != 0 && y1 % 400 != 0)
         {
-            remainingDay = (29);
+            monthDifference = (29);
         }
         else
         {
-            remainingDay = (28);
+            monthDifference = (28);
         }
     }
     if (m1 == 4)
     {
         if (y1 % 4 == 0 && y1 % 100 == 0 && y1 % 400 == 0)
         {
-            remainingDay = (31 + 29);
+            monthDifference = (31 + 29);
         }
         else if (y1 % 4 == 0 && y1 % 100 != 0 && y1 % 400 != 0)
         {
-            remainingDay = (31 + 29);
+            monthDifference = (31 + 29);
         }
         else
         {
-            remainingDay = (31 + 28);
+            monthDifference = (31 + 28);
         }
     }
     if (m1 == 5)
     {
         if (y1 % 4 == 0 && y1 % 100 == 0 && y1 % 400 == 0)
         {
-            remainingDay = (30 + 31 + 29);
+            monthDifference = (30 + 31 + 29);
         }
         else if (y1 % 4 == 0 && y1 % 100 != 0 && y1 % 400 != 0)
         {
-            remainingDay = (30 + 31 + 29);
+            monthDifference = (30 + 31 + 29);
         }
         else
         {
-            remainingDay = (30 + 31 + 28);
+            monthDifference = (30 + 31 + 28);
         }
     }
     if (m1 == 6)
     {
         if (y1 % 4 == 0 && y1 % 100 == 0 && y1 % 400 == 0)
         {
-            remainingDay = (31 + 30 + 31 + 29);
+            monthDifference = (31 + 30 + 31 + 29);
         }
         else if (y1 % 4 == 0 && y1 % 100 != 0 && y1 % 400 != 0)
         {
-            remainingDay = (31 + 30 + 31 + 29);
+            monthDifference = (31 + 30 + 31 + 29);
         }
         else
         {
-            remainingDay = (31 + 30 + 31 + 28);
+            monthDifference = (31 + 30 + 31 + 28);
         }
     }
     if (m1 == 7)
     {
         if (y1 % 4 == 0 && y1 % 100 == 0 && y1 % 400 == 0)
         {
-            remainingDay = (30 + 31 + 30 + 31 + 29);
+            monthDifference = (30 + 31 + 30 + 31 + 29);
         }
         else if (y1 % 4 == 0 && y1 % 100 != 0 && y1 % 400 != 0)
         {
-            remainingDay = (30 + 31 + 30 + 31 + 29);
+            monthDifference = (30 + 31 + 30 + 31 + 29);
         }
         else
         {
-            remainingDay = (30 + 31 + 30 + 31 + 28);
+            monthDifference = (30 + 31 + 30 + 31 + 28);
         }
     }
     if (m1 == 8)
     {
         if (y1 % 4 == 0 && y1 % 100 == 0 && y1 % 400 == 0)
         {
-            remainingDay = (31 + 30 + 31 + 30 + 31 + 29);
+            monthDifference = (31 + 30 + 31 + 30 + 31 + 29);
         }
         else if (y1 % 4 == 0 && y1 % 100 != 0 && y1 % 400 != 0)
         {
-            remainingDay = (31 + 30 + 31 + 30 + 31 + 29);
+            monthDifference = (31 + 30 + 31 + 30 + 31 + 29);
         }
         else
         {
-            remainingDay = (31 + 30 + 31 + 30 + 31 + 28);
+            monthDifference = (31 + 30 + 31 + 30 + 31 + 28);
         }
     }
     if (m1 == 9)
     {
         if (y1 % 4 == 0 && y1 % 100 == 0 && y1 % 400 == 0)
         {
-            remainingDay = (31 + 31 + 30 + 31 + 30 + 31 + 29);
+            monthDifference = (31 + 31 + 30 + 31 + 30 + 31 + 29);
         }
         else if (y1 % 4 == 0 && y1 % 100 != 0 && y1 % 400 != 0)
         {
-            remainingDay = (31 + 31 + 30 + 31 + 30 + 31 + 29);
+            monthDifference = (31 + 31 + 30 + 31 + 30 + 31 + 29);
         }
         else
         {
-            remainingDay = (31 + 31 + 30 + 31 + 30 + 31 + 28);
+            monthDifference = (31 + 31 + 30 + 31 + 30 + 31 + 28);
         }
     }
     if (m1 == 10)
     {
         if (y1 % 4 == 0 && y1 % 100 == 0 && y1 % 400 == 0)
         {
-            remainingDay = (30 + 31 + 31 + 30 + 31 + 30 + 31 + 29);
+            monthDifference = (30 + 31 + 31 + 30 + 31 + 30 + 31 + 29);
         }
         else if (y1 % 4 == 0 && y1 % 100 != 0 && y1 % 400 != 0)
         {
-            remainingDay = (30 + 31 + 31 + 30 + 31 + 30 + 31 + 29);
+            monthDifference = (30 + 31 + 31 + 30 + 31 + 30 + 31 + 29);
         }
         else
         {
-            remainingDay = (30 + 31 + 31 + 30 + 31 + 30 + 31 + 28);
+            monthDifference = (30 + 31 + 31 + 30 + 31 + 30 + 31 + 28);
         }
     }
     if (m1 == 11)
     {
         if (y1 % 4 == 0 && y1 % 100 == 0 && y1 % 400 == 0)
         {
-            remainingDay = (31 + 30 + 31 + 31 + 30 + 31 + 30 + 31 + 29);
+            monthDifference = (31 + 30 + 31 + 31 + 30 + 31 + 30 + 31 + 29);
         }
         else if (y1 % 4 == 0 && y1 % 100 != 0 && y1 % 400 != 0)
         {
-            remainingDay = (31 + 30 + 31 + 31 + 30 + 31 + 30 + 31 + 29);
+            monthDifference = (31 + 30 + 31 + 31 + 30 + 31 + 30 + 31 + 29);
         }
         else
         {
-            remainingDay = (31 + 30 + 31 + 31 + 30 + 31 + 30 + 31 + 28);
+            monthDifference = (31 + 30 + 31 + 31 + 30 + 31 + 30 + 31 + 28);
         }
     }
     if (m1 == 12)
     {
         if (y1 % 4 == 0 && y1 % 100 == 0 && y1 % 400 == 0)
         {
-            remainingDay = (30 + 31 + 30 + 31 + 31 + 30 + 31 + 30 + 31 + 29);
+            monthDifference = (30 + 31 + 30 + 31 + 31 + 30 + 31 + 30 + 31 + 29);
         }
         else if (y1 % 4 == 0 && y1 % 100 != 0 && y1 % 400 != 0)
         {
-            remainingDay = (30 + 31 + 30 + 31 + 31 + 30 + 31 + 30 + 31 + 29);
+            monthDifference = (30 + 31 + 30 + 31 + 31 + 30 + 31 + 30 + 31 + 29);
         }
         else
         {
-            remainingDay = (30 + 31 + 30 + 31 + 31 + 30 + 31 + 30 + 31 + 28);
+            monthDifference = (30 + 31 + 30 + 31 + 31 + 30 + 31 + 30 + 31 + 28);
         }
     }
 
@@ -209,19 +209,19 @@ int main()
     while (y1 != y2)
     {
         --y1;
-        /*DEBUG PURPOSES: std::cout << "leapDays = " << leapDays << " leapDays\ty1 = " << y1 << "\n";*/
+        /*DEBUG PURPOSES: std::cout << "yearDifference = " << yearDifference << " yearDifference\ty1 = " << y1 << "\n";*/
         if (y1 % 4 == 0 && y1 % 100 == 0 && y1 % 400 == 0)
-            leapDays += 366;
+            yearDifference += 366;
         else if (y1 % 4 == 0 && y1 % 100 != 0 && y1 % 400 != 0)
-            leapDays += 366;
+            yearDifference += 366;
         else
-            leapDays += 365;
+            yearDifference += 365;
     }
-    calculatingDays = remainingDay + leapDays;
+    calculatingDays = dayDifference + monthDifference + yearDifference;
 
     std::cout << "\tdayDifference = " << dayDifference << "\n";
-    std::cout << "\tremainingDay = " << remainingDay << "\n";
-    std::cout << "\tleapDays = " << leapDays << "\n";
+    std::cout << "\tmonthDifference = " << monthDifference << "\n";
+    std::cout << "\tyearDifference = " << yearDifference << "\n";
     std::cout << "\tcalculatingDays = " << calculatingDays << "\n";
 
     return 0;
