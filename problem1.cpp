@@ -54,65 +54,68 @@ int main()
     //days are the same, but the month and year are different
     if (m1 > m2) //e.g., newDate = 11/23/2020 and olderDate = 1/23/2020
     {
-        --m1;
-        if (m1 == 1)
+        while (m1 > m2)
         {
-            monthDifference += 31;
-        }
-        if (m1 == 2)
-        {
-            if (y1 % 4 == 0 && y1 % 100 == 0 && y1 % 400 == 0)
+            --m1;
+            if (m1 == 1)
             {
-                monthDifference += 29;
+                monthDifference += 31;
             }
-            else if (y1 % 4 == 0 && y1 % 100 != 0 && y1 % 400 != 0)
+            if (m1 == 2)
             {
-                monthDifference += 29;
+                if (y1 % 4 == 0 && y1 % 100 == 0 && y1 % 400 == 0)
+                {
+                    monthDifference += 29;
+                }
+                else if (y1 % 4 == 0 && y1 % 100 != 0 && y1 % 400 != 0)
+                {
+                    monthDifference += 29;
+                }
+                else
+                {
+                    monthDifference += 28;
+                }
             }
-            else
+            if (m1 == 3)
             {
-                monthDifference += 28;
+                monthDifference += 31;
             }
-        }
-        if (m1 == 3)
-        {
-            monthDifference += 31;
-        }
-        if (m1 == 4)
-        {
-            monthDifference += 30;
-        }
-        if (m1 == 5)
-        {
-            monthDifference += 31;
-        }
-        if (m1 == 6)
-        {
-            monthDifference += 30;
-        }
-        if (m1 == 7)
-        {
-            monthDifference += 31;
-        }
-        if (m1 == 8)
-        {
-            monthDifference += 31;
-        }
-        if (m1 == 9)
-        {
-            monthDifference += 30;
-        }
-        if (m1 == 10)
-        {
-            monthDifference += 31;
-        }
-        if (m1 == 11)
-        {
-            monthDifference += 30;
-        }
-        if (m1 == 12)
-        {
-            monthDifference += 31;
+            if (m1 == 4)
+            {
+                monthDifference += 30;
+            }
+            if (m1 == 5)
+            {
+                monthDifference += 31;
+            }
+            if (m1 == 6)
+            {
+                monthDifference += 30;
+            }
+            if (m1 == 7)
+            {
+                monthDifference += 31;
+            }
+            if (m1 == 8)
+            {
+                monthDifference += 31;
+            }
+            if (m1 == 9)
+            {
+                monthDifference += 30;
+            }
+            if (m1 == 10)
+            {
+                monthDifference += 31;
+            }
+            if (m1 == 11)
+            {
+                monthDifference += 30;
+            }
+            if (m1 == 12)
+            {
+                monthDifference += 31;
+            }
         }
     }
     else //e.g., newerDate = 1/23/2020 and olderDate = 8/23/2019
