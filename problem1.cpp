@@ -20,10 +20,12 @@ int main()
     }*/
 
 
+    //m1, d1, and y1 are for the newer date
     int m1 = 11;
     int d1 = 23;
     int y1 = 2009;
-    int m2 = 2;
+    //m2, d2, and y2 are for the older date
+    int m2 = 1;
     int d2 = 8;
     int y2 = 2006;
 
@@ -50,172 +52,156 @@ int main()
     int calculatingDays = 0;
 
     //days are the same, but the month and year are different
-    if (m1 == 2)
+    if (m1 > m2) //e.g., newDate = 11/23/2020 and olderDate = 1/23/2020
     {
-        monthDifference = 0;
-    }
-    if (m1 == 3)
-    {
-        if (y1 % 4 == 0 && y1 % 100 == 0 && y1 % 400 == 0)
+        --m1;
+        if (m1 == 1)
         {
-            monthDifference = (29);
+            monthDifference += 31;
         }
-        else if (y1 % 4 == 0 && y1 % 100 != 0 && y1 % 400 != 0)
+        if (m1 == 2)
         {
-            monthDifference = (29);
+            if (y1 % 4 == 0 && y1 % 100 == 0 && y1 % 400 == 0)
+            {
+                monthDifference += 29;
+            }
+            else if (y1 % 4 == 0 && y1 % 100 != 0 && y1 % 400 != 0)
+            {
+                monthDifference += 29;
+            }
+            else
+            {
+                monthDifference += 28;
+            }
         }
-        else
+        if (m1 == 3)
         {
-            monthDifference = (28);
+            monthDifference += 31;
         }
-    }
-    if (m1 == 4)
-    {
-        if (y1 % 4 == 0 && y1 % 100 == 0 && y1 % 400 == 0)
+        if (m1 == 4)
         {
-            monthDifference = (31 + 29);
+            monthDifference += 30;
         }
-        else if (y1 % 4 == 0 && y1 % 100 != 0 && y1 % 400 != 0)
+        if (m1 == 5)
         {
-            monthDifference = (31 + 29);
+            monthDifference += 31;
         }
-        else
+        if (m1 == 6)
         {
-            monthDifference = (31 + 28);
+            monthDifference += 30;
         }
-    }
-    if (m1 == 5)
-    {
-        if (y1 % 4 == 0 && y1 % 100 == 0 && y1 % 400 == 0)
+        if (m1 == 7)
         {
-            monthDifference = (30 + 31 + 29);
+            monthDifference += 31;
         }
-        else if (y1 % 4 == 0 && y1 % 100 != 0 && y1 % 400 != 0)
+        if (m1 == 8)
         {
-            monthDifference = (30 + 31 + 29);
+            monthDifference += 31;
         }
-        else
+        if (m1 == 9)
         {
-            monthDifference = (30 + 31 + 28);
+            monthDifference += 30;
         }
-    }
-    if (m1 == 6)
-    {
-        if (y1 % 4 == 0 && y1 % 100 == 0 && y1 % 400 == 0)
+        if (m1 == 10)
         {
-            monthDifference = (31 + 30 + 31 + 29);
+            monthDifference += 31;
         }
-        else if (y1 % 4 == 0 && y1 % 100 != 0 && y1 % 400 != 0)
+        if (m1 == 11)
         {
-            monthDifference = (31 + 30 + 31 + 29);
+            monthDifference += 30;
         }
-        else
+        if (m1 == 12)
         {
-            monthDifference = (31 + 30 + 31 + 28);
-        }
-    }
-    if (m1 == 7)
-    {
-        if (y1 % 4 == 0 && y1 % 100 == 0 && y1 % 400 == 0)
-        {
-            monthDifference = (30 + 31 + 30 + 31 + 29);
-        }
-        else if (y1 % 4 == 0 && y1 % 100 != 0 && y1 % 400 != 0)
-        {
-            monthDifference = (30 + 31 + 30 + 31 + 29);
-        }
-        else
-        {
-            monthDifference = (30 + 31 + 30 + 31 + 28);
+            monthDifference += 31;
         }
     }
-    if (m1 == 8)
+    else //e.g., newerDate = 1/23/2020 and olderDate = 8/23/2019
     {
-        if (y1 % 4 == 0 && y1 % 100 == 0 && y1 % 400 == 0)
+    --y1;
+        while (m1 != m2)
         {
-            monthDifference = (31 + 30 + 31 + 30 + 31 + 29);
-        }
-        else if (y1 % 4 == 0 && y1 % 100 != 0 && y1 % 400 != 0)
-        {
-            monthDifference = (31 + 30 + 31 + 30 + 31 + 29);
-        }
-        else
-        {
-            monthDifference = (31 + 30 + 31 + 30 + 31 + 28);
-        }
+            --m1;
+            if (m1 == 1)
+            {
+                monthDifference += 31;
+                m1 = 12;
+            }
+            if (m1 == 2)
+            {
+                if (y1 % 4 == 0 && y1 % 100 == 0 && y1 % 400 == 0)
+                {
+                    monthDifference += 29;
+                }
+                else if (y1 % 4 == 0 && y1 % 100 != 0 && y1 % 400 != 0)
+                {
+                    monthDifference += 29;
+                }
+                else
+                {
+                    monthDifference += 28;
+                }
+            }
+            if (m1 == 3)
+            {
+                monthDifference += 31;
+            }
+            if (m1 == 4)
+            {
+                monthDifference += 30;
+            }
+            if (m1 == 5)
+            {
+                monthDifference += 31;
+            }
+            if (m1 == 6)
+            {
+                monthDifference += 30;
+            }
+            if (m1 == 7)
+            {
+                monthDifference += 31;
+            }
+            if (m1 == 8)
+            {
+                monthDifference += 31;
+            }
+            if (m1 == 9)
+            {
+                monthDifference += 30;
+            }
+            if (m1 == 10)
+            {
+                monthDifference += 31;
+            }
+            if (m1 == 11)
+            {
+                monthDifference += 30;
+            }
+            if (m1 == 12)
+            {
+                monthDifference += 31;
+            }
+        } 
     }
-    if (m1 == 9)
-    {
-        if (y1 % 4 == 0 && y1 % 100 == 0 && y1 % 400 == 0)
-        {
-            monthDifference = (31 + 31 + 30 + 31 + 30 + 31 + 29);
-        }
-        else if (y1 % 4 == 0 && y1 % 100 != 0 && y1 % 400 != 0)
-        {
-            monthDifference = (31 + 31 + 30 + 31 + 30 + 31 + 29);
-        }
-        else
-        {
-            monthDifference = (31 + 31 + 30 + 31 + 30 + 31 + 28);
-        }
-    }
-    if (m1 == 10)
-    {
-        if (y1 % 4 == 0 && y1 % 100 == 0 && y1 % 400 == 0)
-        {
-            monthDifference = (30 + 31 + 31 + 30 + 31 + 30 + 31 + 29);
-        }
-        else if (y1 % 4 == 0 && y1 % 100 != 0 && y1 % 400 != 0)
-        {
-            monthDifference = (30 + 31 + 31 + 30 + 31 + 30 + 31 + 29);
-        }
-        else
-        {
-            monthDifference = (30 + 31 + 31 + 30 + 31 + 30 + 31 + 28);
-        }
-    }
-    if (m1 == 11)
-    {
-        if (y1 % 4 == 0 && y1 % 100 == 0 && y1 % 400 == 0)
-        {
-            monthDifference = (31 + 30 + 31 + 31 + 30 + 31 + 30 + 31 + 29);
-        }
-        else if (y1 % 4 == 0 && y1 % 100 != 0 && y1 % 400 != 0)
-        {
-            monthDifference = (31 + 30 + 31 + 31 + 30 + 31 + 30 + 31 + 29);
-        }
-        else
-        {
-            monthDifference = (31 + 30 + 31 + 31 + 30 + 31 + 30 + 31 + 28);
-        }
-    }
-    if (m1 == 12)
-    {
-        if (y1 % 4 == 0 && y1 % 100 == 0 && y1 % 400 == 0)
-        {
-            monthDifference = (30 + 31 + 30 + 31 + 31 + 30 + 31 + 30 + 31 + 29);
-        }
-        else if (y1 % 4 == 0 && y1 % 100 != 0 && y1 % 400 != 0)
-        {
-            monthDifference = (30 + 31 + 30 + 31 + 31 + 30 + 31 + 30 + 31 + 29);
-        }
-        else
-        {
-            monthDifference = (30 + 31 + 30 + 31 + 31 + 30 + 31 + 30 + 31 + 28);
-        }
-    }
+    
 
     //days and months are the same, but the year is different
     while (y1 != y2)
-    {
-        --y1;
+    {        
         /*DEBUG PURPOSES: std::cout << "yearDifference = " << yearDifference << " yearDifference\ty1 = " << y1 << "\n";*/
         if (y1 % 4 == 0 && y1 % 100 == 0 && y1 % 400 == 0)
+        {
             yearDifference += 366;
+        }
         else if (y1 % 4 == 0 && y1 % 100 != 0 && y1 % 400 != 0)
+        {
             yearDifference += 366;
+        }
         else
+        {
             yearDifference += 365;
+        }
+        --y1;
     }
     calculatingDays = dayDifference + monthDifference + yearDifference;
 
