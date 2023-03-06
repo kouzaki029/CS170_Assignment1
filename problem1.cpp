@@ -21,13 +21,13 @@ int main()
 
 
     //m1, d1, and y1 are for the newer date
-    int m1 = 11;
-    int d1 = 23;
-    int y1 = 2009;
+    int m1 = 1;
+    int d1 = 24;
+    int y1 = 2020;
     //m2, d2, and y2 are for the older date
     int m2 = 1;
-    int d2 = 8;
-    int y2 = 2006;
+    int d2 = 23;
+    int y2 = 1899;
 
     std::cout << "newerDate:\t" << d1 << "-" << m1 << "-" << y1 << "\n";
     std::cout << "olderDate:\t" << d2 << "-" << m2 << "-" << y2 << "\n";
@@ -52,7 +52,7 @@ int main()
     int calculatingDays = 0;
 
     //days are the same, but the month and year are different
-    if (m1 > m2) //e.g., newDate = 11/23/2020 and olderDate = 1/23/2020
+    if (m1 > m2 || m1 == m2) //e.g., newDate = 11/23/2020 and olderDate = 1/23/2020
     {
         while (m1 > m2)
         {
