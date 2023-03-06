@@ -1,3 +1,6 @@
+/*
+    program does not account the Julian calendar; in other words anything before 1582 will be off because it was a part of the Julian calendar and not the Gregorian
+*/
 #include <iostream>
 
 int main()
@@ -21,16 +24,16 @@ int main()
 
 
     //m1, d1, and y1 are for the newer date
-    int m1 = 1;
-    int d1 = 24;
+    int m1 = 11;
+    int d1 = 23;
     int y1 = 2020;
     //m2, d2, and y2 are for the older date
     int m2 = 1;
-    int d2 = 23;
+    int d2 = 16;
     int y2 = 1899;
 
-    std::cout << "newerDate:\t" << d1 << "-" << m1 << "-" << y1 << "\n";
-    std::cout << "olderDate:\t" << d2 << "-" << m2 << "-" << y2 << "\n";
+    std::cout << "newerDate:\t" << m1 << "/" << d1 << "/" << y1 << "\n";
+    std::cout << "olderDate:\t" << m2 << "/" << d2 << "/" << y2 << "\n";
 
     /* 01/23/2020 - 01/23/1899 = 44194 days
      01/23/2021 - 01/23/1899 = 44560 days
