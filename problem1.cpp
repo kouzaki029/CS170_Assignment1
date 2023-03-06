@@ -21,7 +21,9 @@ int main()
     {
         y2 = rand() % yearRange + 1;
     }*/
-
+    int monthDifference = 0;
+    int yearDifference = 0;
+    int calculatingDays = 0;
 
     //m1, d1, and y1 are for the newer date
     int m1 = 11;
@@ -49,10 +51,6 @@ int main()
 
     //the day, month and year are different
     int dayDifference = d1 - d2;
-
-    int monthDifference = 0;
-    int yearDifference = 0;
-    int calculatingDays = 0;
 
     //days are the same, but the month and year are different
     if (m1 > m2 || m1 == m2) //e.g., newDate = 11/23/2020 and olderDate = 1/23/2020
