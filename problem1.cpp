@@ -41,7 +41,6 @@ int main()
             else
             {
                 d1 = userEntry;
-                //cout << "d1 = " << d1 << "\n";
             }
         }
         else if (m1 == 0)
@@ -90,8 +89,6 @@ int main()
             else
             {
                 m1 = userEntry;
-                //cout << "d1 = " << d1 << "\tm1 = " << m1 << "\n";
-                //cout << "m1 = " << m1 << "\n";
             }
         }
         else if (y1 == 0)
@@ -108,8 +105,6 @@ int main()
             else
             {
                 y1 = userEntry;
-                //cout << "d1 = " << d1 << "\tm1 = " << m1 << "\ty1 = " << y1 << "\n";
-                //cout << "y1 = " << y1 << "\n";
             }
         }
 
@@ -133,7 +128,6 @@ int main()
             else
             {
                 d2 = userEntry;
-                //cout << "d2 = " << d2 << "\n";
             }
         }
         else if (m2 == 0)
@@ -155,7 +149,6 @@ int main()
             else
             {
                 m2 = userEntry;
-                //cout << "m2 = " << m2 << "\n";
             }
         }
         else if (y2 == 0)
@@ -172,7 +165,6 @@ int main()
             else
             {
                 y2 = userEntry;
-                //cout << "y2 = " << y2 << "\n";
                 done = true;
             }
         }
@@ -331,7 +323,6 @@ int main()
         //days and months are the same, but the year is different
         while (y1 != y2)
         {
-            /*DEBUG PURPOSES: std::cout << "yearDifference = " << yearDifference << " yearDifference\ty1 = " << y1 << "\n";*/
             if (y1 % 4 == 0 && y1 % 100 == 0 && y1 % 400 == 0)
             {
                 yearDifference += 366;
@@ -346,6 +337,7 @@ int main()
             }
             --y1;
         }
+        
         calculatingDays = dayDifference + monthDifference + yearDifference;
 
         std::cout << "\tdayDifference = " << dayDifference << "\n";
