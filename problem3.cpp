@@ -76,38 +76,29 @@ int main()
             if(i == 1)
             {
                 evenPlace += (userNumber % base);
-                /*DEBUG PURPOSES: cout << "evenPlace += (" << userNumber << " % " << base << ") or "<< (userNumber % base) << "\n";*/
             }
             //even-exponent
             if(i % 2 == 0)
             {
                 userNumber /= base;
-                /*DEBUG PURPOSES: std::cout << userEntry << " / " << base << "^" << i << " = " << userNumber << "\n";*/
                 evenPlace += (userNumber % base);
-                /*DEBUG PURPOSES: cout << "evenPlace += (" << userNumber << " % " << base << ") or "<< (userNumber % base) << "\n";*/
             }
             //odd-exponent
             else
             {
                 userNumber /= base;
-                /*DEBUG PURPOSES: std::cout << userEntry << " / " << base << "^" << i << " = " << userNumber << "\n";*/
                 oddPlace += (userNumber % base);
-                /*DEBUG PURPOSES: cout << "oddPlace += (" << userNumber << " % " << base << ") or "<< (userNumber % base) << "\n";*/
                 doubleMe = (userNumber % base) * 2;
-                /*DEBUG PURPOSES:cout << "idk1 = " << idk1 << "\n";*/
                 while(doubleMe != 0)
                 {
                     extractDigit = (doubleMe % base);
-                    /*DEBUG PURPOSES: cout << "extractDigit = (" << idk1 << " % " << base << ") or " << extractDigit << "\n";*/
                     doubleMe /= base;
-                    /*DEBUG PURPOSES: cout << "idk1 /= " << base << ") or " << idk1 << "\n";*/
                     verifyOdd += extractDigit;
                 }
             }
         }
-        /*DEBUG PURPOSES: cout << "verifyOdd = " << verifyOdd << "\n";*/
+        
         sum = evenPlace + oddPlace;
-        /*DEBUG PURPOSES: cout << "sum = (" << evenPlace << " + " << oddPlace << ") or " << sum << "\n";*/
 
         if(sum % base == 0)
         {
